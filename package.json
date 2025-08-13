@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "jest"
+    "start": "node index.js",
+    "test": "jest",
+    "postinstall": "prisma generate"  // Add this line
   },
   "dependencies": {
     "@prisma/client": "^5.14.0",
@@ -24,3 +25,4 @@
     "testEnvironment": "node"
   }
 }
+
