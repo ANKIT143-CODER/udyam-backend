@@ -4,6 +4,8 @@ FROM node:18-alpine
 # Set the working directory in the container
 WORKDIR /app
 
+RUN apk add openssl
+
 # Copy package.json and package-lock.json first to leverage Docker cache
 COPY package*.json ./
 
@@ -19,5 +21,6 @@ EXPOSE 3001
 
 # Define the command to run the application
 CMD ["npm", "start"]
+
 
 
