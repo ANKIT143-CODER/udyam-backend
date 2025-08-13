@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  // This is a placeholder. In a real app, you would set this in a .env file.
+  url      = "postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+}
+
+model Registration {
+  id               Int      @id @default(autoincrement())
+  aadhaarNumber    String   @unique
+  entrepreneurName String
+  panNumber        String?
+  createdAt        DateTime @default(now())
+}
