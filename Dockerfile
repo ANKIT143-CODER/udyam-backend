@@ -11,7 +11,6 @@ COPY package*.json ./
 COPY prisma ./prisma
 COPY .env ./
 COPY server.js ./
-COPY index.js ./
 
 # Install project dependencies, which will trigger the 'prisma generate' postinstall script
 RUN npm install
@@ -21,3 +20,4 @@ EXPOSE 3001
 
 # Define the command to run the application
 CMD ["npm", "start"]
+
